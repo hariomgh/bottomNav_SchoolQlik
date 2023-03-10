@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const FirstPage());
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: FirstPage(),
+    ),
+  );
 }
-
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
 
@@ -15,12 +19,14 @@ class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
 
       home: Scaffold(
         appBar: AppBar(
           title: const Text('SchoolQlik Parents'),
+          backgroundColor: Colors.yellow,
         ),
-        body: Text('Home Screen'),
+        body: Center(child: Text('Home Screen')),
       ),
     );
   }

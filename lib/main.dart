@@ -6,6 +6,7 @@ import 'profile.dart';
 void main() {
   runApp(
     const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     ),
   );
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   double screenHeight = 0;
   double screenWidth = 0;
 
-  Color primary =  const Color(0xffeef444c);
+  // Color primary =  const Color(0xffeef444c);
 
   int currentIndex = 1;
 
@@ -47,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: IndexedStack(
         index: currentIndex,
-        children: const [
+        children: [
            FirstPage(),
           Reports(),
           Profile(),
@@ -88,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Icon(
                             navigationIcons[i],
-                            color: i == currentIndex ? primary : Colors.black54,
+                            color: i == currentIndex ? Colors.yellow : Colors.black54,
                             size: i == currentIndex ? 30 : 20,
                           ),
                           i == currentIndex ? Container(
@@ -97,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 24,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(40)),
-                              color: primary,
+                              color: Colors.yellow,
                             ),
                           ) : const SizedBox(),
                         ],
